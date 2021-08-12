@@ -1,0 +1,64 @@
+---
+title: "A mockstudy"
+author: "Alison Hill"
+date: "9/10/2019"
+output:
+  beamer_presentation:
+    slide_level: 2
+  powerpoint_presentation: default
+  revealjs::revealjs_presentation: default
+  ioslides_presentation: default
+params:
+  palette: roma
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r packages, include=FALSE}
+library(tidyverse)
+library(cowplot)
+library(arsenal)
+library(here)
+library(survival)
+library(survminer)
+library(scico)
+surv_cols <- scico::scico(3, begin = .3, end = 1, palette = params$palette)
+```
+
+```{r, include = FALSE}
+source(here::here("analysis/R/mock.R"))
+```
+
+## Background
+
+## Demographics
+
+
+```{r fig.asp=.5, fig.width=10, fig.cap="The caption."}
+plot_grid(age_density, age_boxplot, labels = "AUTO")
+```
+
+
+## Treatment Response
+
+
+```{r fig.asp=.5, fig.width=10, fig.cap="The caption."}
+plot_grid(surv_pct_plot, surv_days_plot, labels = "AUTO")
+```
+
+## Survival Analysis
+
+
+```{r}
+surv_curve
+```
+
+## Adverse Events
+
+
+```{r ae-plot, fig.cap="The caption.", echo=FALSE}
+ae_pct_plot
+```
+
