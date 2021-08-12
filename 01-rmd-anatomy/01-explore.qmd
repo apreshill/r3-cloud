@@ -2,7 +2,7 @@
 title: 'Explore mockstudy data'
 date: '2019-09-12'
 author: Paul Villanueva
-output: html_document
+format: html_document
 ---
 
 Hi Alison and Stephan,
