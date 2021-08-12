@@ -1,10 +1,8 @@
 ---
 title: 'Explore mockstudy data'
 date: '2019-09-12'
-author:
-- affiliation: Virginia Tech
-  name: Daniel Chen
-output: 
+author: Paul Villanueva
+format: 
   html_document:
     theme: "flatly"
     toc: true
@@ -20,7 +18,6 @@ This document summarizes current enrollment in this mock study as of `r rmarkdow
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
 
 ```{r include=FALSE}
 library(here) # for file paths
@@ -54,7 +51,6 @@ mockdata %>%
   distinct(country)
 ```
 
-
 # Overall enrollment to date
 
 ```{r}
@@ -64,14 +60,12 @@ n_sites <- n_distinct(mockdata$site)
 
 Overall enrollment includes `r n_sites` `r ifelse(n_sites > 1, "sites", "site")`.
 
-
 ```{r}
 mockdata %>% 
   summarize(total_n = sum(n),
             total_target = sum(n_target),
             total_prop = total_n / total_target)
 ```
-
 
 # By site
 
@@ -101,7 +95,6 @@ ggplot(by_site,
 
 # By site and arm
 
-
 ```{r include=FALSE}
 (by_site_arm <- mockdata %>% 
   group_by(site, arm) %>% 
@@ -124,4 +117,3 @@ ggplot(by_site_arm,
                      labels = scales::percent_format(accuracy = 1)) +
   expand_limits(y = 1) 
 ```
-

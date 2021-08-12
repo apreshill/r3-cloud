@@ -9,9 +9,8 @@ Hi Alison and Stephan,
 
 This document summarizes current enrollment in this mock study as of `r rmarkdown::metadata$date`.
 
-We can meet to talk about next steps tomorrow-  
+We can meet to talk about next steps tomorrow-\
 Paul
-
 
 ```{r}
 library(here) # for file paths
@@ -45,7 +44,6 @@ mockdata %>%
   distinct(country)
 ```
 
-
 # Overall enrollment to date
 
 ```{r}
@@ -55,14 +53,12 @@ n_sites <- n_distinct(mockdata$site)
 
 Overall enrollment numbers include `r n_sites` `r ifelse(n_sites > 1, "sites", "site")`.
 
-
 ```{r}
 mockdata %>% 
   summarize(total_n = sum(n),
             total_target = sum(n_target),
             total_prop = total_n / total_target)
 ```
-
 
 # By site
 
@@ -112,4 +108,3 @@ ggplot(by_site_arm,
                      labels = scales::percent_format(accuracy = 1)) +
   expand_limits(y = 1) 
 ```
-
