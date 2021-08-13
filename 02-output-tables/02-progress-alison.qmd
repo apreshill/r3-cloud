@@ -1,30 +1,18 @@
 ---
 title: "Response and adverse events to chemotherapy: A mock study"
-description: |
-  A Y1 progress report presented to NRF funding agency
+subtitle: A Y1 progress report presented to NRF funding agency
 author: 
   - name: "Peter Higgins, MD, Ph.D."
-    url: https://www.uofmhealth.org/profile/4/peter-doyle-higgins-md-phd
-    affiliation: University of Michigan
-    affiliation_url: https://www.uofmhealth.org/
   - name: "Alison Hill, Ph.D."
-    url: https://alison.rbind.io
-    affiliation: RStudio
-    affiliation_url: https://www.rstudio.com
   - name: "Daniel Chen, MPH"
-    url: https://chendaniely.github.io/
-    affiliation: Virginia Tech
-creative_commons: CC BY
 date: "2019-09-12"
-output:   
-  distill::distill_article:
-    toc: true
-  html_document:
+format:
+  html:
     toc: true
     toc_float: true
     theme: flatly
-  pdf_document: default
-  word_document:
+  pdf: default
+  word:
     toc: true
 ---
 
@@ -161,7 +149,7 @@ mockdata %>%
 
 <!--TODO: add age and bmi here-->
 
-```{r results='asis', layout="l-body-outset"}
+```{r results='asis'}
 tableby(arm ~ sex + age + bmi, data = mockdata) %>% 
   summary(digits = 2, 
           digits.p = 2, 
@@ -171,7 +159,7 @@ tableby(arm ~ sex + age + bmi, data = mockdata) %>%
 
 <!--TODO: decide which table one to make!-->
 
-```{r results='asis', layout="l-body-outset"}
+```{r results='asis'}
 demo_tab <- CreateTableOne(
   data = mockdata,
   vars = c('age', 'hgb', 'race'),
@@ -187,7 +175,7 @@ Adverse events have been low overall, affecting at most approximately 22.8% of p
 
 For final reporting, we will follow [recent BMJ recommendations](https://www.bmj.com/content/355/bmj.i5078) that "adverse event reporting should include numerators and denominators for all events."
 
-```{r results='asis', layout="l-body-outset"}
+```{r results='asis'}
 ae_tab <- mockdata %>% 
   tableby(
     arm ~ ae_blood_clot + ae_vomiting + ae_diarrhea + ae_neuropathy + ae_low_wbc, 
@@ -200,11 +188,11 @@ ae_tab
 ```
 
 
-## Acknowledgments {.appendix}
+## Acknowledgments 
 
 Our thanks to all the research participants and their families.
 
-## Author Contributions {.appendix}
+## Author Contributions 
 
 Peter Higgins did the majority of the site coordination, progress monitoring, and analyses presented in this report. Alison Hill did the visualizations and consulted on analyses. Daniel Chen contributed to all phases of the research project and to the preparation of this report.
 

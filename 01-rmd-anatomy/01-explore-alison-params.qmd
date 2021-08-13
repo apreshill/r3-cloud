@@ -2,30 +2,30 @@
 title: 'Explore mockstudy data'
 date: '2019-09-12'
 author: Paul Villanueva
+execute:
+  echo: false
+  messages: false
+  warning: false
 format: 
-  html_document:
+  html:
     theme: "flatly"
     toc: true
-    toc_float: true
-    code_download: true
-    df_print: kable
+    code-fold: true
+    code-summary: "Show the code"
+    code-tools: true
 params:
   data: "data/mockbsd.csv"
 ---
 
 This document summarizes current enrollment in this mock study as of `r rmarkdown::metadata$date`.
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-```{r include=FALSE}
+```{r}
 library(here) # for file paths
 library(tidyverse) # for all else
 theme_set(theme_minimal())
 ```
 
-```{r include=FALSE}
+```{r}
 mockdata <- read_csv(here(params$data))
 ```
 

@@ -2,15 +2,14 @@
 title: 'Explore mockstudy data'
 date: '2019-09-12'
 author: Paul Villanueva
-format: html_document
+format: html
 ---
 
 Hi Alison and Stephan,
 
 This document summarizes current enrollment in this mock study as of `r rmarkdown::metadata$date`.
 
-We can meet to talk about next steps tomorrow-\
-Paul
+We can meet to talk about next steps tomorrow- Paul
 
 ```{r}
 library(here) # for file paths
@@ -73,6 +72,10 @@ by_site <- mockdata %>%
 ```
 
 ```{r}
+#| label: fig-by-site
+#| fig-cap: "Participant enrollment by site"
+#| fig-alt: "We are currently just below 50% enrollment for our Boston site."
+
 ggplot(by_site, 
        aes(
          x = site, 
@@ -98,6 +101,9 @@ by_site_arm <- mockdata %>%
 ```
 
 ```{r}
+#| fig-cap: "Polar axis plot"
+#| fig-alt: "A line plot on a polar axis"
+
 ggplot(by_site_arm,
        aes(x = site, 
            y = prop_enroll, 

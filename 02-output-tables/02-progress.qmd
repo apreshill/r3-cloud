@@ -1,32 +1,15 @@
 ---
 title: 'Response and adverse events to chemotherapy: A mock study'
-author:
-- affiliation: University of Michigan
-  affiliation_url: https://www.uofmhealth.org/
-  name: Peter Higgins, MD, Ph.D.
-  url: https://www.uofmhealth.org/profile/4/peter-doyle-higgins-md-phd
-- affiliation: RStudio
-  affiliation_url: https://www.rstudio.com
-  name: Alison Hill, Ph.D.
-  url: https://alison.rbind.io
-- affiliation: Virginia Tech
-  name: Daniel Chen, MPH
-  url: https://chendaniely.github.io/
+author: Alison Hill, Ph.D.
 date: '2019-09-12'
-output: html_document
-description: |
-  A Y1 progress report presented to NRF funding agency
-creative_commons: CC BY
+format: html
+subtitle: A Y1 progress report presented to NRF funding agency
+execute:
+  echo: FALSE
+  warning: FALSE
+  message: FALSE
+  comment: NA
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = FALSE,
-  warning = FALSE,
-  message = FALSE,
-  comment = NA
-)
-```
 
 
 ```{r}
@@ -151,7 +134,7 @@ mockdata %>%
 
 <!--TODO: add age and bmi here-->
 
-```{r results='asis', layout="l-body-outset"}
+```{r results='asis'}
 tableby(arm ~ sex, data = mockdata) %>% 
   summary(digits = 2, 
           digits.p = 2, 
@@ -161,7 +144,7 @@ tableby(arm ~ sex, data = mockdata) %>%
 
 <!--TODO: decide which table one to make!-->
 
-```{r results='asis', layout="l-body-outset"}
+```{r results='asis'}
 CreateTableOne(
   data = mockdata,
   vars = c('age', 'race'),
@@ -178,17 +161,16 @@ For final reporting, we will follow [recent BMJ recommendations](https://www.bmj
 
 <!--TODO: add adverse events table-->
 
-```{r results='asis', layout="l-body-outset", eval=FALSE}
+```{r results='asis', eval=FALSE}
 ae_tab <- mockdata %>% 
 ae_tab
 ```
 
 
-## Acknowledgments {.appendix}
-
+## Acknowledgments
 Our thanks to all the research participants and their families.
 
-## Author Contributions {.appendix}
+## Author Contributions
 
 Peter Higgins did the majority of the site coordination, progress monitoring, and analyses presented in this report. Alison Hill did the visualizations and consulted on analyses. Daniel Chen contributed to all phases of the research project and to the preparation of this report.
 
