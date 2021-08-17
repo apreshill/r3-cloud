@@ -1,6 +1,6 @@
 ---
 title: 'Explore mockstudy data'
-date: '2019-09-12'
+date: '`r params$date`'
 author: Paul Villanueva
 execute:
   echo: false
@@ -14,10 +14,11 @@ format:
     code-summary: "Show the code"
     code-tools: true
 params:
+  date: '2021-08-12'
   data: "data/mockbsd.csv"
 ---
 
-This document summarizes current enrollment in this mock study as of `r rmarkdown::metadata$date`.
+This document summarizes current enrollment in this mock study as of `r params$date`.
 
 ```{r}
 library(here) # for file paths
