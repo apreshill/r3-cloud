@@ -1,0 +1,64 @@
+---
+title: "Markdown"
+format:
+  html:
+    theme: default
+---
+
+# HEADER 1
+
+## HEADER 2
+
+### HEADER 3
+
+#### HEADER 4
+
+##### HEADER 5
+
+###### HEADER 6
+
+Childhood **vaccines**\
+are one of the\
+*great triumphs*\
+of modern medicine.
+
+Indeed, parents whose children are\
+vaccinated no longer have to worry about\
+their child's death or disability from:
+
+-   whooping cough,
+-   polio,
+-   diphtheria,
+-   hepatitis, or
+-   a host of other infections.
+
+Vaccines are the most cost-effective health\
+care interventions there are. We have\
+three new, extremely effective vaccines to\
+roll out in developing countries:
+
+1.  pneumonia
+2.  rotavirus
+3.  meningitis A
+
+[Photo](https://en.wikipedia.org/wiki/Vaccine)
+
+![Receiving rubella vaccination, Brazil, 2008.](http://bit.ly/VaccineBySandraRugio)
+
+![Receiving rubella vaccination, Brazil, 2008.](http://bit.ly/VaccineBySandraRugio){fig-alt="Receiving rubella vaccination, Brazil, 2008."}
+
++-----------------+--------------+-------------------------------+------------------------+
+| **Brand**       | **Age**      | **Shots**                     | **Fully Vaccinated**   |
++=================+==============+===============================+========================+
+| Pfizer-BioNtech | 12+          | 2                             | 2 weeks after 2nd shot |
+|                 |              |                               |                        |
+|                 |              | Given 3 weeks (21 days) apart |                        |
++-----------------+--------------+-------------------------------+------------------------+
+| Moderna         | 18+          | 2                             | 2 weeks after 2nd shot |
+|                 |              |                               |                        |
+|                 |              | Given 4 weeks (28 days) apart |                        |
++-----------------+--------------+-------------------------------+------------------------+
+| JnJ             | 18+          | 1                             | 2 weeks after 2nd shot |
++-----------------+--------------+-------------------------------+------------------------+
+
+To do: Citations/bibliography (show by DOI)

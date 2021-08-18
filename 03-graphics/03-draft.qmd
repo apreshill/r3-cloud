@@ -13,13 +13,12 @@ author:
   name: Daniel Chen, MPH
   url: https://chendaniely.github.io/
 date: "2019-09-01"
-output: 
-  bookdown::html_document2:
+format: 
+  html:
     theme: flatly
     toc: true
     toc_float: true
-  distill::distill_article: default
-  bookdown::word_document2: default
+  word: default
 ---
 
 # Note

@@ -8,7 +8,7 @@ execute:
   warning: false
 format: 
   html:
-    theme: "flatly"
+    theme: "lux"
     toc: true
     code-fold: true
     code-summary: "Show the code"
@@ -82,6 +82,10 @@ mockdata %>%
 ```
 
 ```{r}
+#| label: fig-by-site
+#| fig-cap: "Participant enrollment by site"
+#| fig-alt: "We are currently just below 50% enrollment for our Boston site."
+
 ggplot(by_site, 
        aes(
          x = site, 
@@ -108,6 +112,10 @@ ggplot(by_site,
 ```
 
 ```{r}
+#| label: fig-by-arm
+#| fig-cap: "Participant enrollment by site and study arm"
+#| fig-alt: "At the Boston site, the F study arm is lagging behind the A and G arms"
+
 ggplot(by_site_arm,
        aes(x = site, 
            y = prop_enroll, 

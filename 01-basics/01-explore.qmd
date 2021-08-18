@@ -103,8 +103,9 @@ by_site_arm <- mockdata %>%
 ```
 
 ```{r}
-#| fig-cap: "Polar axis plot"
-#| fig-alt: "A line plot on a polar axis"
+#| label: fig-by-arm
+#| fig-cap: "Participant enrollment by site and study arm"
+#| fig-alt: "At the Boston site, the F study arm is lagging behind the A and G arms"
 
 ggplot(by_site_arm,
        aes(x = site, 
