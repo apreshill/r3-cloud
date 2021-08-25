@@ -3,7 +3,7 @@ title: 'Explore mockstudy data'
 date: '`r params$date`'
 author: Paul Villanueva
 execute:
-  echo: false
+  echo: true
   messages: false
   warning: false
 format: 
@@ -13,6 +13,8 @@ format:
     code-fold: true
     code-summary: "Show the code"
     code-tools: true
+    comments:
+      hypothesis: true
 params:
   date: '2021-08-12'
   data: "data/mockbsd.csv"
@@ -21,13 +23,12 @@ params:
 This document summarizes current enrollment in this mock study as of `r params$date`.
 
 ```{r}
-library(here) # for file paths
-library(tidyverse) # for all else
+library(tidyverse) 
 theme_set(theme_minimal())
 ```
 
 ```{r}
-mockdata <- read_csv(here(params$data))
+mockdata <- read_csv(params$data)
 ```
 
 ```{r include=FALSE}
@@ -82,7 +83,7 @@ mockdata %>%
 ```
 
 ```{r}
-#| label: fig-by-site
+#| label: fig-sites
 #| fig-cap: "Participant enrollment by site"
 #| fig-alt: "We are currently just below 50% enrollment for our Boston site."
 
@@ -98,9 +99,12 @@ ggplot(by_site,
   coord_flip()
 ```
 
+
+
 # By site and arm
 
-```{r include=FALSE}
+```{r}
+#| include: FALSE
 (by_site_arm <- mockdata %>% 
   group_by(site, arm) %>% 
   summarize(
@@ -112,7 +116,7 @@ ggplot(by_site,
 ```
 
 ```{r}
-#| label: fig-by-arm
+#| label: fig-arms
 #| fig-cap: "Participant enrollment by site and study arm"
 #| fig-alt: "At the Boston site, the F study arm is lagging behind the A and G arms"
 

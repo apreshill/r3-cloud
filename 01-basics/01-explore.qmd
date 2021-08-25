@@ -9,18 +9,19 @@ params:
 
 Hi Alison and Stephan,
 
-This document summarizes current enrollment in this mock study as of `r params$date`.
+This document summarizes current enrollment in this mock study as of `r params$date`. The three planned treatment arms are:
+
+<--TODO: add markdown table of treatment arms here-->
 
 We can meet to talk about next steps tomorrow- Paul
 
 ```{r}
-library(here) # for file paths
-library(tidyverse) # for all else
+library(tidyverse) 
 theme_set(theme_minimal())
 ```
 
 ```{r}
-mockdata <- read_csv(here("data/mockboston.csv"))
+mockdata <- read_csv("data/mockboston.csv")
 ```
 
 ```{r}
@@ -74,7 +75,7 @@ by_site <- mockdata %>%
 ```
 
 ```{r}
-#| label: fig-by-site
+#| label: fig-sites
 #| fig-cap: "Participant enrollment by site"
 #| fig-alt: "We are currently just below 50% enrollment for our Boston site."
 
@@ -103,7 +104,7 @@ by_site_arm <- mockdata %>%
 ```
 
 ```{r}
-#| label: fig-by-arm
+#| label: fig-arms
 #| fig-cap: "Participant enrollment by site and study arm"
 #| fig-alt: "At the Boston site, the F study arm is lagging behind the A and G arms"
 
@@ -117,3 +118,6 @@ ggplot(by_site_arm,
                      labels = scales::percent_format(accuracy = 1)) +
   expand_limits(y = 1) 
 ```
+
+
+
